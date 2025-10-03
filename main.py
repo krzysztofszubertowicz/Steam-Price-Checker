@@ -1,15 +1,25 @@
-import requests
-
-#enter the name of the game you wanna search
-game_name = input("Podaj nazwe gry: ")
+import tkinter as tk
+import steam_scrapper as scrapper
 
 
-link_steam = f"https://store.steampowered.com/api/storesearch/?term={game_name}&cc=pl"
+def create_window(title, size):
+    window = tk.Tk()
+    window.title(title)
+    window.geometry(size)
+    return window
 
-r = requests.get(link_steam)
+def handle_search_click():
+    game_name = entry.get()
+    scrapper.search_game(game_name)
+    print(scrapper.dataset)
 
-data = r.json()
 
-for item in data["items"]:
-    print("nazwa: ", item["name"])
-    print("Cena PLN: ", item["price"]["final"]/100)
+window = create_window("Steam_Scrapper", "320x200")
+entry = tk.Entry(window)
+entry.pack(pady = 10)
+button = tk.Button(window, text="Search", command= handle_search_click)
+button.pack()
+
+window.mainloop()
+
+
