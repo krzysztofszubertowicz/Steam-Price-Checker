@@ -9,9 +9,12 @@ def search_game(game_name):
     r = requests.get(link_steam)
 
     data = r.json()
-    for item in data["items"]:
-        dataset[item["name"]] = item["price"]["final"]/100
-        
+    if data and data.get("items"):
+        for item in data["items"]:
+            if item.get("price"):
+                game_name = item.get("name")
+                price = item["price"]["final"]/100
+                dataset[game_name] = price
     return dataset
 
 
