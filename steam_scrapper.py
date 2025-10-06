@@ -2,7 +2,7 @@ import requests
 import streamlit as st
 
 
-@st.cache_data
+
 def search_game(game_name):
     dataset = []
 
