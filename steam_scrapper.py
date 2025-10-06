@@ -25,3 +25,20 @@ def search_game(game_name):
 
 
 
+def get_game_details(gameid):
+    url = f"https://store.steampowered.com/api/appdetails?appids={gameid}"
+
+    r = requests.get(url)
+
+    data = r.json()
+
+    game_id_str = str(gameid)
+
+    if data and data.get(game_id_str) and data[game_id_str].get("success"):
+        
+        game_data = data[game_id_str]["data"]
+
+        description = game_data.get("detailed_description")
+
+        return description
+

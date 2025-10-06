@@ -1,6 +1,5 @@
 import steam_scrapper as scrap
 import ui 
-import export_data
 import streamlit as st
 import pandas as pd
 
@@ -13,4 +12,3 @@ if game_name:
     st.dataframe(df)
     export = df.to_csv()
     ui.show_export_button(export)
-
