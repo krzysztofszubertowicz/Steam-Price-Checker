@@ -1,21 +1,24 @@
-## Cel Projektu
+# Steam Game Price Checker
 
-Prosty, konsolowy skrypt w języku Python, stworzony jako mój pierwszy, praktyczny projekt w ramach nauki automatyzacji i interakcji z zewnętrznymi API. 
+A simple Python + Streamlit application for quickly searching and viewing game prices on the Steam store.
 
-Głównym celem było stworzenie narzędzia, które rozwiązuje realny, codzienny problem: potrzebę szybkiego i efektywnego sprawdzania cen gier w sklepie Steam bez konieczności manualnego otwierania przeglądarki. Projekt ten jest dowodem mojego dążenia do automatyzacji i optymalizacji powtarzalnych zadań.
+## Description
+This project is a hands-on automation and data retrieval tool built with Python. It allows users to search for games on Steam and instantly see price information, images, and additional details, all in a clean and interactive interface.
 
-## Architektura i Zastosowane Technologie (System Architecture & Tech Stack)
+The app uses an unofficial Steam API to fetch structured JSON data and demonstrates:
+- Working with external APIs
+- Parsing and processing JSON data
+- Building a simple interactive UI with Streamlit
+- Exporting search results to CSV
 
-*   **Język:** Python 3
-*   **Kluczowe Biblioteki:**
-    *   `requests`: Do wykonywania zapytań HTTP i komunikacji z API Steam.
-*   **Źródło Danych:** Niedokumentowane publicznie, ale dostępne API wyszukiwarki sklepu Steam. Kluczową częścią projektu było odkrycie i dekonstrukcja tego API w celu pozyskania ustrukturyzowanych danych w formacie JSON.
+## Features
+- Search for any game by name
+- Display game prices, images, and IDs
+- Show detailed descriptions in expandable sections
+- Export search results to CSV for offline use
+- Interactive UI built with Streamlit
 
-## Wyzwania i Zdobyta Wiedza (Challenges & Lessons Learned)
-
-Ten z pozoru prosty projekt był dla mnie niezwykle cennym poligonem doświadczalnym, który nauczył mnie:
-1.  **Analizy Sieci:** Jak, używając narzędzi deweloperskich w przeglądarce, monitorować ruch sieciowy i identyfikować zapytania API, które są wysyłane "pod maską" przez strony internetowe.
-2.  **Pracy z API i formatem JSON:** Jak programistycznie wysyłać zapytania do zewnętrznego serwisu, odbierać odpowiedzi i parsować dane w formacie JSON, by wydobyć z nich konkretne, potrzebne informacje.
-3.  **Czystości i Prostoty Kodu:** Jak napisać krótki, czytelny i w pełni funkcjonalny skrypt, który wykonuje jedno, dobrze zdefiniowane zadanie.
-
-> **Uwaga:** To jest projekt "work-in-progress". Przyszłe plany rozwoju obejmują m.in. dodanie obsługi różnych walut, zapisywanie historii cen i implementację powiadomień.
+## Tech Stack
+- **Python 3**
+- **Libraries**: `requests`, `pandas`, `streamlit`
+- **API**: Unofficial Steam store search API
